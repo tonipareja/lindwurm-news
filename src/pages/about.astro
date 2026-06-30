@@ -1,0 +1,98 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteMeta from "../components/SiteMeta.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <SiteMeta
+      title="About | Lindwurm Herald"
+      description="La historia de Lindwurm Herald, una crónica independiente dedicada al mundo de Warcrow."
+    />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <main class="about-page">
+      <section class="about-panel">
+        <div class="about-copy">
+          <p class="kicker">About</p>
+          <h1>La crónica detrás del Herald</h1>
+
+          <p>
+            En Lindwurm, las guerras no empiezan cuando se desenvainan las espadas. Empiezan mucho antes:
+            en un rumor susurrado en una taberna, en una carta sellada que nunca llega a su destino, en el
+            movimiento silencioso de una patrulla al otro lado de la frontera.
+          </p>
+
+          <p>Lindwurm Herald nace para seguir ese rastro.</p>
+
+          <p>
+            Somos una crónica independiente dedicada al mundo de Warcrow: sus facciones, sus conflictos,
+            sus personajes, sus ejércitos y todas aquellas historias que se escriben entre la niebla, la
+            sangre y el oricalco. Aquí encontrarás noticias, análisis, rumores, relatos y observaciones
+            desde los caminos de Lindwurm, contadas no como simples anuncios, sino como fragmentos de un
+            mundo vivo que cambia con cada batalla.
+          </p>
+        </div>
+
+        <figure class="about-figure about-figure-portrait">
+          <img src="/images/aldren-vael-portrait.png" alt="Aldren Vael, cronista de Lindwurm Herald" />
+        </figure>
+
+        <div class="about-copy">
+          <p>
+            La voz detrás del Herald es Aldren Vael, humano nacido en las fronteras de la Hegemonía de
+            Embersig. Durante años sirvió como escriba de campaña, mensajero militar y cronista de
+            oficiales, acompañando expediciones, registrando movimientos de tropas y archivando informes
+            que pocos llegaban a leer.
+          </p>
+
+          <p>
+            Fue allí donde aprendió una verdad incómoda: en la guerra, la historia rara vez pertenece a
+            quienes la viven. Pertenece a quienes sobreviven para contarla. O a quienes tienen suficiente
+            poder para modificarla.
+          </p>
+
+          <p>
+            Aldren vio informes corregidos antes de ser enviados, derrotas convertidas en sacrificios
+            nobles, desapariciones reducidas a notas al margen y victorias adornadas hasta perder todo
+            parecido con la realidad. Con el tiempo, dejó atrás los sellos oficiales de Embersig y comenzó
+            a caminar por su cuenta.
+          </p>
+        </div>
+
+        <figure class="about-figure about-figure-miniature">
+          <img src="/images/aldren-vael-miniature.png" alt="Miniatura de Aldren Vael sobre una base escénica" />
+        </figure>
+
+        <div class="about-copy">
+          <p>
+            Desde entonces viaja por Lindwurm como cronista independiente, recogiendo testimonios de
+            soldados, mercaderes, exploradores, hechiceros, nobles, desertores y criaturas que ningún
+            archivo imperial admitiría haber escuchado. Su emblema, una rosa de los vientos gastada por el
+            uso, representa aquello que guía su oficio: buscar dirección donde otros solo ven caos.
+          </p>
+
+          <p>
+            Lindwurm Herald no promete neutralidad perfecta. Ningún cronista que haya pisado un campo de
+            batalla podría hacerlo sin mentir. Pero sí promete algo más difícil: mirar donde otros apartan
+            la vista, conservar los nombres que el poder intenta borrar y contar las historias que
+            sobreviven entre una campaña y la siguiente.
+          </p>
+
+          <p>
+            Porque en Lindwurm, cada facción tiene sus estandartes. Cada ejército, sus héroes. Cada nación,
+            sus versiones.
+          </p>
+
+          <p>El Herald solo tiene una misión:</p>
+
+          <p class="about-closing">seguir el rastro de la verdad antes de que los vencedores la entierren.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
