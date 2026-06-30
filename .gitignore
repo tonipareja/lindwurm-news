@@ -4,3 +4,4 @@ dist/
 .vercel/
 .tools/
 .DS_Store
+.vercel
