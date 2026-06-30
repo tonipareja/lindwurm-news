@@ -507,14 +507,6 @@ h3 a:hover,
   max-height: 680px;
 }
 
-.about-closing {
-  max-width: 680px;
-  color: var(--ink) !important;
-  font-size: clamp(1.35rem, 3vw, 2.05rem) !important;
-  font-weight: 900;
-  line-height: 1.18 !important;
-}
-
 .copy p + p {
   margin-top: 18px;
 }
