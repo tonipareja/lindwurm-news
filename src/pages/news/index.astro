@@ -35,18 +35,20 @@ const serializedNews = JSON.stringify(news);
 
     <template id="article-template">
       <article class="news-card">
-        <a class="image-link" href="">
-          <img src="" alt="" loading="lazy" />
-        </a>
-        <div class="card-body">
-          <a class="category" href=""></a>
-          <h3><a href=""></a></h3>
-          <p></p>
-          <div class="meta">
-            <span></span>
-            <span></span>
+        <a class="card-link" href="">
+          <span class="image-link">
+            <img src="" alt="" loading="lazy" />
+          </span>
+          <div class="card-body">
+            <span class="category"></span>
+            <h3></h3>
+            <span class="excerpt"></span>
+            <span class="meta">
+              <span></span>
+              <span></span>
+            </span>
           </div>
-        </div>
+        </a>
       </article>
     </template>
 
@@ -67,16 +69,16 @@ const serializedNews = JSON.stringify(news);
       function buildCard(item) {
         const card = template.content.firstElementChild.cloneNode(true);
         const articleUrl = `/news/${item.slug}/`;
-        const links = card.querySelectorAll("a");
+        const link = card.querySelector("a");
         const image = card.querySelector("img");
-        const excerpt = card.querySelector("p");
+        const category = card.querySelector(".category");
+        const title = card.querySelector("h3");
+        const excerpt = card.querySelector(".excerpt");
         const meta = card.querySelectorAll(".meta span");
 
-        links[0].href = articleUrl;
-        links[1].href = `#${item.category.toLowerCase()}`;
-        links[1].textContent = item.category;
-        links[2].href = articleUrl;
-        links[2].textContent = item.title;
+        link.href = articleUrl;
+        category.textContent = item.category;
+        title.textContent = item.title;
         image.src = item.image;
         image.alt = "";
         excerpt.textContent = item.excerpt;
