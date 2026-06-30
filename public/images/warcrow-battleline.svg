@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-label="Fantasy battleline advancing through a dark valley">
+  <defs>
+    <linearGradient id="battle-sky" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0b1011"/>
+      <stop offset="0.48" stop-color="#284942"/>
+      <stop offset="1" stop-color="#9b6b36"/>
+    </linearGradient>
+    <linearGradient id="battle-ground" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#31423d"/>
+      <stop offset="1" stop-color="#111817"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="820" fill="url(#battle-sky)"/>
+  <path d="M0 430 170 260l132 108 126-150 150 178 110-90 150 132 94-124 188 182 98-82 182 138v268H0Z" fill="#0d1112" opacity=".86"/>
+  <path d="M0 545c168-62 325-84 470-68 168 18 294 84 475 70 137-10 277-54 455-131v404H0Z" fill="url(#battle-ground)"/>
+  <g fill="#0a0d0e">
+    <path d="M238 532h84l-32 182h-56Z"/>
+    <path d="M266 354 328 532H204Z"/>
+    <circle cx="266" cy="330" r="42"/>
+    <path d="M522 510h88l-30 204h-64Z"/>
+    <path d="M566 320 642 510H486Z"/>
+    <circle cx="566" cy="292" r="45"/>
+    <path d="M830 530h82l-28 184h-58Z"/>
+    <path d="M872 372 936 530H806Z"/>
+    <circle cx="872" cy="346" r="39"/>
+    <path d="M1090 512h98l-36 202h-68Z"/>
+    <path d="M1138 300 1222 512H1056Z"/>
+    <circle cx="1138" cy="272" r="48"/>
+  </g>
+  <g stroke="#d5b76b" stroke-linecap="round" stroke-width="14">
+    <path d="M190 602 342 456"/>
+    <path d="M487 595 646 430"/>
+    <path d="M789 608 943 480"/>
+    <path d="M1042 602 1234 404"/>
+  </g>
+  <path d="M102 126h270v110H102z" fill="#8d2b26"/>
+  <path d="M102 236h196l-44 52 44 52H102z" fill="#d5b76b"/>
+</svg>

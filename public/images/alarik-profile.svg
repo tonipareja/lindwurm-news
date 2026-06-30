@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Character card on a tactical table">
+  <rect width="1200" height="750" fill="#d8d1c2"/>
+  <path d="M0 0h1200v750H0z" fill="#22201d" opacity=".08"/>
+  <rect x="130" y="85" width="470" height="580" fill="#f6f0df" stroke="#15120f" stroke-width="18"/>
+  <rect x="165" y="126" width="400" height="235" fill="#315c4d"/>
+  <path d="M218 326 366 162l148 164Z" fill="#15120f"/>
+  <circle cx="366" cy="202" r="46" fill="#d4a72c"/>
+  <rect x="170" y="402" width="390" height="30" fill="#b51f24"/>
+  <rect x="170" y="460" width="310" height="18" fill="#15120f" opacity=".72"/>
+  <rect x="170" y="502" width="350" height="18" fill="#15120f" opacity=".72"/>
+  <rect x="170" y="544" width="250" height="18" fill="#15120f" opacity=".72"/>
+  <path d="M705 166h350v70H705zm-40 140h430v52H665zm0 94h360v52H665zm0 94h420v52H665z" fill="#15120f"/>
+  <path d="M705 166h350v70H705z" fill="#b51f24"/>
+  <g stroke="#d4a72c" stroke-width="10" fill="none"><path d="M716 631h338"/><path d="M884 463v168"/><path d="m772 519 112-56 112 56"/></g>
+</svg>

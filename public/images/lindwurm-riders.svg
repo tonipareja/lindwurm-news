@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Fantasy warriors advancing through mountains">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#253f43"/><stop offset="0.48" stop-color="#7d2b2e"/><stop offset="1" stop-color="#d5a438"/></linearGradient>
+    <linearGradient id="ground" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#574538"/><stop offset="1" stop-color="#171411"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#sky)"/>
+  <path d="M0 405 190 220l116 130 96-96 160 151 126-140 146 162 110-90 256 178v235H0Z" fill="#171a19" opacity=".86"/>
+  <path d="M0 530c130-48 263-69 399-63 147 7 252 60 395 61 126 1 256-34 406-99v321H0Z" fill="url(#ground)"/>
+  <g fill="#0c0b0a">
+    <path d="M465 258h38l18 76h-74Z"/>
+    <path d="M484 190 530 80l10 126 72 25-77 24-14 82-39-75-80-10Z"/>
+    <path d="M620 308c84 2 171 53 229 127l-18 44c-78-46-154-71-224-76Z"/>
+    <path d="M355 435c114-82 252-94 408-35l56 100c-186-38-338-24-454 43Z"/>
+    <path d="M292 543h657l54 106H237Z"/>
+  </g>
+  <g fill="#d7b65a">
+    <rect x="102" y="92" width="10" height="530"/>
+    <path d="M112 100h246l-42 58 42 58H112Z"/>
+  </g>
+</svg>

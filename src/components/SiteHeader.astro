@@ -1,0 +1,111 @@
+---
+import { news } from "../data/news";
+
+const currentPath = Astro.url.pathname;
+const searchItems = news.map((item) => ({
+  title: item.title,
+  excerpt: item.excerpt,
+  category: item.category,
+  url: `/news/${item.slug}/`,
+}));
+
+const navItems = [
+  { href: "/news/", label: "News" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Lindwurm Herald">
+    <span>
+      <strong>Lindwurm Herald</strong>
+      <small>Unofficial Warcrow news</small>
+    </span>
+  </a>
+  <nav aria-label="Primary navigation">
+    {
+      navItems.map((item) => (
+        <a class={currentPath.startsWith(item.href) ? "active" : ""} href={item.href}>
+          {item.label}
+        </a>
+      ))
+    }
+    <div class="site-search" data-search-root>
+      <button class="search-toggle" type="button" aria-label="Open search" aria-expanded="false">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m16.5 16.5 4 4"></path>
+        </svg>
+      </button>
+      <div class="search-panel" hidden>
+        <label for="site-search-input">Search posts</label>
+        <input id="site-search-input" type="search" placeholder="Search miniatures, rules, lore..." autocomplete="off" />
+        <div class="search-results" role="list"></div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script define:vars={{ searchItems }}>
+  const root = document.querySelector("[data-search-root]");
+  const button = root?.querySelector(".search-toggle");
+  const panel = root?.querySelector(".search-panel");
+  const input = root?.querySelector("input");
+  const results = root?.querySelector(".search-results");
+
+  function renderResults(query) {
+    if (!results) return;
+
+    const normalizedQuery = query.trim().toLowerCase();
+    const matches = normalizedQuery
+      ? searchItems.filter((item) =>
+          [item.title, item.excerpt, item.category].some((value) => value.toLowerCase().includes(normalizedQuery)),
+        )
+      : searchItems.slice(0, 4);
+
+    results.replaceChildren();
+
+    if (matches.length === 0) {
+      const empty = document.createElement("p");
+      empty.className = "search-empty";
+      empty.textContent = "No posts found.";
+      results.appendChild(empty);
+      return;
+    }
+
+    matches.slice(0, 5).forEach((item) => {
+      const link = document.createElement("a");
+      link.href = item.url;
+      link.setAttribute("role", "listitem");
+      link.innerHTML = `<span>${item.category}</span><strong>${item.title}</strong><small>${item.excerpt}</small>`;
+      results.appendChild(link);
+    });
+  }
+
+  function setSearchOpen(isOpen) {
+    if (!button || !panel || !input) return;
+
+    panel.hidden = !isOpen;
+    button.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen) {
+      renderResults(input.value);
+      requestAnimationFrame(() => input.focus());
+    }
+  }
+
+  button?.addEventListener("click", () => {
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    setSearchOpen(!isOpen);
+  });
+
+  input?.addEventListener("input", () => renderResults(input.value));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setSearchOpen(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (root && !root.contains(event.target)) setSearchOpen(false);
+  });
+</script>

@@ -1,0 +1,57 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteMeta from "../components/SiteMeta.astro";
+import { newsEntries } from "../data/news";
+import "../styles/global.css";
+
+const displayDate = new Intl.DateTimeFormat("en", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteMeta description="Read the latest updates from the world of Warcrow on Lindwurm Herald." />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <main class="open-feed">
+      <section class="intro compact" aria-label="Introduction">
+        <div class="section-heading">
+          <p>Latest updates</p>
+          <h1>Lindwurm news</h1>
+          <span>Read the latest updates from the world of Warcrow.</span>
+        </div>
+      </section>
+
+      <section class="post-feed" aria-label="Full posts">
+        {
+          newsEntries.map((entry, index) => {
+            const Content = entry.Content;
+            return (
+            <article class:list={["open-post", index === 0 && "latest-post"]} id={entry.slug}>
+              <header>
+                <span class="category">{entry.category}</span>
+                <h2>{entry.title}</h2>
+                <p>{entry.excerpt}</p>
+                <div class="meta">
+                  <span>{entry.readingTime}</span>
+                  <span>{displayDate.format(new Date(entry.date))}</span>
+                </div>
+              </header>
+              <img src={entry.image} alt="" loading={index === 0 ? "eager" : "lazy"} />
+              <div class="copy">
+                <Content />
+              </div>
+            </article>
+            );
+          })
+        }
+      </section>
+    </main>
+  </body>
+</html>

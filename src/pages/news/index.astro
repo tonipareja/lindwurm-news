@@ -1,0 +1,106 @@
+---
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteMeta from "../../components/SiteMeta.astro";
+import { news } from "../../data/news";
+import "../../styles/global.css";
+
+const serializedNews = JSON.stringify(news);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteMeta
+      title="News | Lindwurm Herald"
+      description="Browse every Lindwurm Herald update, from Warcrow miniature reveals to rules notes and campaign reports."
+    />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <main>
+      <section class="intro" aria-label="Introduction">
+        <div class="section-heading">
+          <p>Dispatch archive</p>
+          <h1>News from Lindwurm</h1>
+          <span>
+            Browse every miniature reveal, rules note, lore fragment, and campaign report in one place.
+          </span>
+        </div>
+      </section>
+
+      <section class="news-grid" id="news-grid" aria-live="polite"></section>
+      <div class="sentinel" id="sentinel" aria-hidden="true"></div>
+    </main>
+
+    <template id="article-template">
+      <article class="news-card">
+        <a class="image-link" href="">
+          <img src="" alt="" loading="lazy" />
+        </a>
+        <div class="card-body">
+          <a class="category" href=""></a>
+          <h3><a href=""></a></h3>
+          <p></p>
+          <div class="meta">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script define:vars={{ serializedNews }}>
+      const allNews = JSON.parse(serializedNews);
+      const grid = document.querySelector("#news-grid");
+      const template = document.querySelector("#article-template");
+      const sentinel = document.querySelector("#sentinel");
+      const dateFormatter = new Intl.DateTimeFormat("en", {
+        day: "2-digit",
+        month: "short",
+        year: "2-digit",
+      });
+
+      let visibleCount = 0;
+      const pageSize = 4;
+
+      function buildCard(item) {
+        const card = template.content.firstElementChild.cloneNode(true);
+        const articleUrl = `/news/${item.slug}/`;
+        const links = card.querySelectorAll("a");
+        const image = card.querySelector("img");
+        const excerpt = card.querySelector("p");
+        const meta = card.querySelectorAll(".meta span");
+
+        links[0].href = articleUrl;
+        links[1].href = `#${item.category.toLowerCase()}`;
+        links[1].textContent = item.category;
+        links[2].href = articleUrl;
+        links[2].textContent = item.title;
+        image.src = item.image;
+        image.alt = "";
+        excerpt.textContent = item.excerpt;
+        meta[0].textContent = item.readingTime;
+        meta[1].textContent = dateFormatter.format(new Date(item.date));
+
+        return card;
+      }
+
+      function renderMore() {
+        const nextItems = allNews.slice(visibleCount, visibleCount + pageSize);
+        nextItems.forEach((item) => grid.appendChild(buildCard(item)));
+        visibleCount += nextItems.length;
+        sentinel.hidden = visibleCount >= allNews.length;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting) && !sentinel.hidden) {
+          renderMore();
+        }
+      }, { rootMargin: "480px" });
+
+      renderMore();
+      observer.observe(sentinel);
+    </script>
+  </body>
+</html>

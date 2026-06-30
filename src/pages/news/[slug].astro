@@ -1,0 +1,55 @@
+---
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteMeta from "../../components/SiteMeta.astro";
+import { newsEntries } from "../../data/news";
+import "../../styles/global.css";
+
+export function getStaticPaths() {
+  return newsEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const Content = entry.Content;
+const displayDate = new Intl.DateTimeFormat("en", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteMeta
+      title={`${entry.title} | Lindwurm Herald`}
+      description={entry.excerpt}
+      image={entry.image}
+      type="article"
+    />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <main class="article-page">
+      <a class="back-link" href="/news/">Back to news</a>
+      <article>
+        <header>
+          <span class="category">{entry.category}</span>
+          <h1>{entry.title}</h1>
+          <p>{entry.excerpt}</p>
+          <div class="meta">
+            <span>{entry.readingTime}</span>
+            <span>{displayDate.format(new Date(entry.date))}</span>
+          </div>
+        </header>
+        <img src={entry.image} alt="" />
+        <section class="copy">
+          <Content />
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

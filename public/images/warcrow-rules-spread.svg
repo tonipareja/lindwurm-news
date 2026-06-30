@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-label="Open rulebook with tokens and unit cards">
+  <rect width="1400" height="820" fill="#0d1415"/>
+  <rect x="104" y="96" width="536" height="628" fill="#efe4c7" stroke="#0b1011" stroke-width="18"/>
+  <rect x="760" y="96" width="536" height="628" fill="#efe4c7" stroke="#0b1011" stroke-width="18"/>
+  <path d="M700 110v600" stroke="#d5b76b" stroke-width="12"/>
+  <path d="M164 178h360M164 236h296M164 294h360M164 352h230M164 470h390M164 528h330M164 586h278" stroke="#1a2222" stroke-width="18"/>
+  <rect x="834" y="168" width="382" height="180" fill="#315c4d"/>
+  <path d="M884 302 1026 188l140 114Z" fill="#101617"/>
+  <circle cx="1026" cy="224" r="38" fill="#d5b76b"/>
+  <rect x="834" y="402" width="176" height="92" fill="#8d2b26"/>
+  <rect x="1040" y="402" width="176" height="92" fill="#d5b76b"/>
+  <rect x="834" y="546" width="382" height="34" fill="#1a2222"/>
+  <rect x="834" y="614" width="286" height="34" fill="#1a2222"/>
+  <g fill="#d5b76b" stroke="#101617" stroke-width="12">
+    <circle cx="566" cy="170" r="46"/>
+    <circle cx="616" cy="246" r="34"/>
+    <circle cx="558" cy="312" r="28"/>
+  </g>
+</svg>

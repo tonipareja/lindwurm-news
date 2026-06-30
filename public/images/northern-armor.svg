@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Brushes and fantasy metal armor">
+  <rect width="1200" height="750" fill="#efe8db"/>
+  <circle cx="265" cy="205" r="122" fill="#315c4d"/>
+  <circle cx="933" cy="575" r="145" fill="#b51f24" opacity=".88"/>
+  <path d="M450 115h300l90 205-95 278H455L360 320Z" fill="#262b2d"/>
+  <path d="M472 155h256l61 168-70 226H481l-70-226Z" fill="#627274"/>
+  <path d="M505 185h190l44 126-51 178H512l-51-178Z" fill="#1b2021"/>
+  <path d="M160 600 850 110l42 62-690 490Z" fill="#15120f"/>
+  <path d="M826 85c55 18 92 51 110 99l-55 38c-18-48-55-81-110-99Z" fill="#d4a72c"/>
+  <path d="M226 625 784 229" stroke="#f7f1e4" stroke-width="16" opacity=".65"/>
+</svg>

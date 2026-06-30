@@ -1,0 +1,30 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteMeta from "../components/SiteMeta.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteMeta
+      title="Contact | Lindwurm Herald"
+      description="Send Warcrow release tips, rules corrections, campaign reports, and community features to Lindwurm Herald."
+    />
+  </head>
+  <body>
+    <SiteHeader />
+
+    <main class="contact-page">
+      <section class="contact-panel">
+        <p class="kicker">Contact</p>
+        <h1>Send a lead from the frontier</h1>
+        <p>
+          Share a release tip, a rules correction, a campaign report, or a painted warband worth featuring.
+          This inbox is here to keep the Herald close to the tabletop community.
+        </p>
+        <a class="text-link" href="mailto:hola@lindwurmherald.com">hola@lindwurmherald.com</a>
+      </section>
+    </main>
+  </body>
+</html>
