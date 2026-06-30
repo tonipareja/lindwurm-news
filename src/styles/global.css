@@ -433,6 +433,12 @@ h3 a:hover,
   padding: clamp(24px, 5vw, 56px);
 }
 
+.contact-panel h1 {
+  max-width: 760px;
+  font-size: clamp(2.2rem, 5vw, 4.1rem);
+  line-height: 1.04;
+}
+
 .article-page header p,
 .copy p,
 .contact-panel p {
