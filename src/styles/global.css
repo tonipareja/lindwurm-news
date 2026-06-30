@@ -507,6 +507,27 @@ h3 a:hover,
   max-height: 680px;
 }
 
+.about-quote {
+  display: grid;
+  gap: 10px;
+  margin: 6px 0 0;
+  max-width: 720px;
+  padding: 18px 22px;
+  border-left: 3px solid var(--gold);
+  background: rgba(213, 192, 132, 0.07);
+}
+
+.about-quote p {
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.about-quote p:first-child {
+  color: var(--gold);
+  font-weight: 900;
+}
+
 .copy p + p {
   margin-top: 18px;
 }
